@@ -12,7 +12,7 @@ Step 3: Open res -> layout -> activity_main.xml (or) main.xml, create the applic
 
 CODE:
 
-____________________________________________
+_______________________________________________________________________________________________________________________________________________________________________
 
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -32,7 +32,7 @@ ____________________________________________
         android:layout_height="match_parent" />
 </RelativeLayout>
 
-____________________________________________
+_______________________________________________________________________________________________________________________________________________________________________
 
 Step 4: Open src -> package -> MainActivity.java. Here firstly declare a webview variable, make JavaScript enable and load the URL of the website. See the whole code below.
 
@@ -40,7 +40,7 @@ Important Note: You can replace our url in below code with any other url you wan
 
 CODE:
 
-____________________________________________
+_______________________________________________________________________________________________________________________________________________________________________
 package com.example.webviewapp;
 
 import android.support.v7.app.AppCompatActivity;
@@ -61,33 +61,33 @@ public class MainActivity extends AppCompatActivity {
         mywebView.loadUrl("https://domain_name/");
     }
 }
-____________________________________________
+_______________________________________________________________________________________________________________________________________________________________________
 
 Step 5: Open AndroidManifest.xml file and add internet permission to it just after the package name. It is required because the App will load data directly from the website.
 
 CODE:
 
-____________________________________________
+_______________________________________________________________________________________________________________________________________________________________________
 
 <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
-____________________________________________
+_______________________________________________________________________________________________________________________________________________________________________
 
 Step 6: After adding the permissions the application is complete but when you run you will find that it will open the links in browser not in application itself. Solution for this is add this line of code in your MainActivity.java class.
 
 CODE:
 
-____________________________________________
+_______________________________________________________________________________________________________________________________________________________________________
 
  mywebView.setWebViewClient(new WebViewClient());
 
-____________________________________________
+_______________________________________________________________________________________________________________________________________________________________________
 
 Step 7: Now to add back buttons to the application to need to add following code to your MainActivity.java class.
 
 CODE:
 
-____________________________________________
+_______________________________________________________________________________________________________________________________________________________________________
 
   public void onBackPressed() {
         if(mywebView.canGoBack())
@@ -99,14 +99,14 @@ ____________________________________________
             super.onBackPressed();
         }
     }
-____________________________________________
+_______________________________________________________________________________________________________________________________________________________________________
 
 Step 8: Further if you want to remove the additional padding in the app, open activity_main.xml and in the layouts remove the padding(bottom, top, right, left). Here’s the final code.
 activity_main.xml
 
 CODE:
 
-____________________________________________
+_______________________________________________________________________________________________________________________________________________________________________
 
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -123,11 +123,11 @@ ____________________________________________
         android:layout_height="match_parent" />
 </RelativeLayout>
 
-____________________________________________
+_______________________________________________________________________________________________________________________________________________________________________
 
 MainActivity.java complete code:
 
-____________________________________________
+_______________________________________________________________________________________________________________________________________________________________________
 
 package com.example.webviewapp;
 
@@ -166,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 
-____________________________________________
+_______________________________________________________________________________________________________________________________________________________________________
 
 Bonus Tip For WebView App: In addition if you want to remove the default action bar, see in image the blue top header. You just need to make a little change in styles.xml file.
 
@@ -175,11 +175,11 @@ Just change theme as NoActionBar. Below code will do
 
 CODE:
 
-____________________________________________
+_______________________________________________________________________________________________________________________________________________________________________
 
 <style name=”AppTheme” parent=”Theme.AppCompat.Light.NoActionBar”>
 
-____________________________________________
+_______________________________________________________________________________________________________________________________________________________________________
 
 Output:
 Now run the App and you will see WebView App of your website. You can simply replace the url with any website url you want to convert into Android App.
