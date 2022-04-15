@@ -1,5 +1,6 @@
 # Website-to-app
 Convert a responsive website into an android app/
+
 Website to App Solution
 
 Step 1: The first step is to take a responsive website that you want to convert in android app important point to note is that it should be a responsive(mobile friendly) website.
