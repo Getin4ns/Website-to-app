@@ -2,7 +2,7 @@
 Convert a responsive website into an android app/
 Website to App Solution
 
-Step 1: The first step is to take a responsive website that you want to convert in android app important point to note is that it should be a responsive(mobile friendly) website. Here we are using our own  appdev.code.blog to convert into android application using WebView which is Mobile responsive site.
+Step 1: The first step is to take a responsive website that you want to convert in android app important point to note is that it should be a responsive(mobile friendly) website.
 
 
 Step 2: Create a new project in Android Studio and name it WebViewApp.
@@ -13,22 +13,22 @@ CODE:
 
 ____________________________________________
 
-<?xml version=”1.0″ encoding=”utf-8″?>
-<RelativeLayout xmlns:android=”http://schemas.android.com/apk/res/android&#8221;
-    xmlns:tools=”http://schemas.android.com/tools&#8221;
-    android:id=”@+id/activity_main”
-    android:layout_width=”match_parent”
-    android:layout_height=”match_parent”
-    android:paddingBottom=”@dimen/activity_vertical_margin”
-    android:paddingLeft=”@dimen/activity_horizontal_margin”
-   android:paddingRight=”@dimen/activity_horizontal_margin”
-    android:paddingTop=”@dimen/activity_vertical_margin”
-    tools:context=”com.example.webviewapp.MainActivity”>
-
-<WebView
-        android:id=”@+id/webview”
-        android:layout_width=”match_parent”
-        android:layout_height=”match_parent” />
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+   android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.webviewapp.MainActivity">
+ 
+ <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </RelativeLayout>
 
 ____________________________________________
@@ -40,7 +40,6 @@ Important Note: You can replace our url in below code with any other url you wan
 CODE:
 
 ____________________________________________
-
 package com.example.webviewapp;
 
 import android.support.v7.app.AppCompatActivity;
@@ -58,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         mywebView = (WebView) findViewById(R.id.webview);
         WebSettings webSettings= mywebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
-        mywebView.loadUrl("https://appdev.code.blog/");
+        mywebView.loadUrl("https://domain_name/");
     }
 }
 ____________________________________________
@@ -69,7 +68,7 @@ CODE:
 
 ____________________________________________
 
-<uses-permission android:name=”android.permission.INTERNET”></uses-permission>
+<uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
 ____________________________________________
 
@@ -79,7 +78,7 @@ CODE:
 
 ____________________________________________
 
-mywebView.setWebViewClient(new WebViewClient());
+ mywebView.setWebViewClient(new WebViewClient());
 
 ____________________________________________
 
@@ -89,7 +88,7 @@ CODE:
 
 ____________________________________________
 
-public void onBackPressed() {
+  public void onBackPressed() {
         if(mywebView.canGoBack())
         {
             mywebView.goBack();
@@ -99,7 +98,6 @@ public void onBackPressed() {
             super.onBackPressed();
         }
     }
-
 ____________________________________________
 
 Step 8: Further if you want to remove the additional padding in the app, open activity_main.xml and in the layouts remove the padding(bottom, top, right, left). Here’s the final code.
@@ -109,19 +107,19 @@ CODE:
 
 ____________________________________________
 
-<?xml version=”1.0″ encoding=”utf-8″?>
-<RelativeLayout xmlns:android=”http://schemas.android.com/apk/res/android&#8221;
-    xmlns:tools=”http://schemas.android.com/tools&#8221;
-    android:id=”@+id/activity_main”
-    android:layout_width=”match_parent”
-    android:layout_height=”match_parent”
-    tools:context=”com.example.webviewapp.MainActivity”>
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.webviewapp.MainActivity">
 
 // WebView Element
     <WebView
-        android:id=”@+id/webview”
-        android:layout_width=”match_parent”
-        android:layout_height=”match_parent” />
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </RelativeLayout>
 
 ____________________________________________
@@ -147,11 +145,11 @@ public class MainActivity extends AppCompatActivity {
         mywebView = (WebView) findViewById(R.id.webview);
         WebSettings webSettings= mywebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
-        mywebView.loadUrl(“https://appdev.code.blog/);
+        mywebView.loadUrl("https://domain_name");
         // Line of Code for opening links in app
         mywebView.setWebViewClient(new WebViewClient());
     }
-   
+    
 //Code For Back Button
 @Override
     public void onBackPressed() {
@@ -183,6 +181,6 @@ ____________________________________________
 ____________________________________________
 
 Output:
-Now run the App and you will see WebView App of appdev.code.blog website. You can simply replace the url with any website url you want to convert into Android App.
+Now run the App and you will see WebView App of your website. You can simply replace the url with any website url you want to convert into Android App.
 
 Hope this is useful.
